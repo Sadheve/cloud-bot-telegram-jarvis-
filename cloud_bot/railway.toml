@@ -1,0 +1,17 @@
+# Railway Deployment Configuration for JARVIS Cloud Bot
+
+[build]
+builder = "nixpacks"
+
+[deploy]
+startCommand = "python main.py"
+healthcheckPath = "/api/instances"
+healthcheckTimeout = 30
+restartPolicyType = "on_failure"
+restartPolicyMaxRetries = 10
+
+# Environment variables (set in Railway dashboard)
+# TELEGRAM_BOT_TOKEN=your_bot_token
+# TELEGRAM_CHAT_ID=your_user_id
+# GEMINI_API_KEY=your_gemini_key
+# PORT=8000 (auto-set by Railway)
